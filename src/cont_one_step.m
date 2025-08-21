@@ -1,6 +1,4 @@
 function [u,beta,tau,tol] = cont_one_step(tau0,u0,beta0,uref,ds)
-%CONT_ONE_STEP 此处显示有关此函数的摘要
-%   此处显示详细说明
 Fx0 = sGjac(u0,beta0,uref);
 global nx M gamma
 %s = u0(end);
@@ -42,4 +40,5 @@ end
 solution = x;
 u = solution(1:end-1);beta = solution(end);tol = norm(sH(u0,beta0,tau,uref,ds,x(1:end-1),x(end)),'inf');
 end
+
 
